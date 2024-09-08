@@ -1,0 +1,158 @@
+/*
+   * Summary of Changes
+      * Background, Border, and Text color definitions for every wlement
+      * Hover, Active, and Focus sub-definitions where relevent
+      * Distinct settings for Window, Window-Content, Window-Aside, and Window-Tooltip
+      * Font, Size, Color settings for Text Tags as well as explicitly for many elements
+      * Alternate theme for Window, Button, and Text Tags
+      * Module support for
+         - Action Pack
+         - Ripper's Taskbar
+
+      * Subsettings for right-hand Sidebar (see gg-theme-sidebar.css)
+         * Module support for
+            - Ripper's File-Picker
+            - Chris Premades Macro and Effect directories
+
+      * Subsettings for Chatlog (see gg-theme-chat.css)
+         * Module support for
+            - Support for Trinium Chat Buttons
+            - Support for Polyglot
+
+      * Subsettings for Journal (see gg-theme-journal.css)
+      * Subsettings for TidySheet5e (see gg-theme-tidysheet.css)
+*/
+
+body.game.garhis-grotto.ui {
+/*
+   *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
+   *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
+   *  *  *  *  *  *  *  *  *  * Hiding Elements *  *  *  *  *  *  *  *  *  *  *  *  *
+   *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
+   *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
+*/
+
+   & li[data-tool="target"],
+   & li[data-tool="togglebreak"],
+   & li[data-tool="clearTargets"],
+   /* & a[data-tab="cards"], */
+   & #settings.settings-sidebar button[data-action="invitations"] {
+	   display: none;
+   }
+}
+
+body.garhis-grotto.ui {
+   & #ui-left {
+      & #controls {
+         height: calc(100hw - var(--gg-ui-taskbar-size-height) - var(--gg-ui-players-size-height));
+      }
+   }
+   & #fast-tooltip {
+      position: relative;
+      top: 90px;
+      left: 180px;
+      width: max-content;
+      max-width: 20%;
+      padding: 6px 6px;
+   }
+   /* Taskbar Support */
+   & #taskbar {
+      width: calc(100vw - (600px));
+      height: 10rem;
+      left: 300px;
+   }
+   & #start-menu {
+      width: calc((100vw - 600px) / 2.5);
+   }
+}
+/* body.garhis-grotto.theme #controls {
+	margin-top: 12px;
+} */
+
+/*General Chat Card Changes*/
+/* body.garhis-grotto.theme  .chat-sidebar .message .dnd5e2.chat-card .description {
+    padding-top: 0.15rem;
+    padding-bottom: 0.15rem;
+    margin-bottom: 0.15rem;
+}
+body.garhis-grotto.theme  .chat-sidebar .message .dnd5e2.chat-card .card-buttons {
+    gap: 0.25rem;
+    padding-bottom: 0.25rem;
+}
+body.garhis-grotto.theme  .chat-sidebar .message .dnd5e2.chat-card .pills .pill {
+    font-size: var(--font-size-9);
+    padding: 0.15rem 0.25rem;
+}
+body.garhis-grotto.theme  .chat-sidebar .message .dnd5e2 button { padding: 0; }
+
+body.garhis-grotto.theme  :is(.chat-popout, #chat-log) .message .message-header { margin-bottom: 0.2rem; }
+
+body.garhis-grotto.theme  :is(.chat-popout, #chat-log) .message.round-marker .message-header {
+	margin-bottom: 0.25rem;
+}
+body.garhis-grotto.theme  :is(.chat-popout, #chat-log) .message:not(.dnd5e-cm-message){
+	text-align: justify;
+}
+body.garhis-grotto.theme  :is(.chat-popout, #chat-log) .message .message-header .flavor-text {
+	margin-block-start: 0px;
+}
+
+body.garhis-grotto.theme  #sidebar #chat-log .chat-message::before { opacity: 15%; }
+body.garhis-grotto.theme  :is(.chat-popout, #chat-log)>.message-content {
+	padding: 0.5rem;
+} */
+
+/* FoundryVTT Directory Changes
+body.garhis-grotto-theme #actors li.folder > .folder-header,
+body.garhis-grotto-theme #items li.folder > .folder-header,
+body.garhis-grotto-theme #compendium li.folder > .folder-header,
+body.garhis-grotto-theme #scenes li.folder > .folder-header,
+body.garhis-grotto-theme #journal li.folder > .folder-header,
+body.garhis-grotto-theme #tables li.folder > .folder-header,
+body.garhis-grotto-theme #cards li.folder > .folder-header { padding: 0 6px; }
+body.garhis-grotto-theme #actors .directory-item.actor,
+body.garhis-grotto-theme #items .directory-item.item,
+body.garhis-grotto-theme #journal .directory-item.journalentry,
+body.garhis-grotto-theme #tables .directory-item.rolltable {
+  position: relative;
+  line-height: 24px;
+}
+body.garhis-grotto-theme #scenes .directory-item.scene .document-name{
+  line-height: 24px;
+}
+body.garhis-grotto-theme #scenes .directory-item.scene {
+  line-height: 30px;
+  height: 30px;
+  margin-bottom: 3px;
+}
+body.garhis-grotto-theme #compendium .directory-item.compendium {
+  position: relative;
+  line-height: 24px;
+  height: unset;
+  flex-direction: row;
+  align-items: center;
+}
+body.garhis-grotto-theme #actors .directory-item.actor .document-name,
+body.garhis-grotto-theme #items .directory-item.item .document-name,
+body.garhis-grotto-theme #tables .directory-item.rolltable .document-name {
+  position: relative;
+  padding-top: 2px;
+  padding-left: 56px;
+}
+body.garhis-grotto-theme .compendium-sidebar .directory-item.compendium .compendium-name {
+  max-width: 70%;
+  white-space: normal;
+  margin-left: 1px;
+  margin-right: 0;
+  padding-top: 0;
+  text-align: left;
+  display: flex;
+}
+body.garhis-grotto-theme #actors .directory-item.actor .thumbnail,
+body.garhis-grotto-theme #items .directory-item.item .thumbnail,
+body.garhis-grotto-theme #tables .directory-item.rolltable .thumbnail {
+  clip: rect(12px, 48px, 36px, 0);
+  position: absolute;
+  margin-top: -11px;
+  margin-bottom: -14px;
+} */

@@ -1,0 +1,55 @@
+{
+   "id": "garhis-grotto-ui",
+   "title": "Garhi's Grotto: UI",
+   "version": "1.0.0",
+   "description": "A comprehensive UI layout, works especially well with the suggested modules.",
+   "authors": [
+      { "name": "Garhi",
+         "email": "garhi@garhisgrotto.com",
+         "url": "www.garhisgrotto.com",
+         "discord": "garhi",
+         "flags": {}
+      }
+   ],
+   "esmodules": [
+		"scripts/gg-ui-init.js"
+	],
+	"styles": [
+      "css/gg-ui-main.css",
+      "css/gg-ui-journal.css"
+	],
+   "flags": {
+      "allowBugReporter": true,
+      "hotReload": {
+         "extensions": ["css", "html", "hbs", "json", "js"],
+         "paths": ["css", "scripts"] }
+   },
+   "compatibility": {
+      "minimum": "12",
+      "verified": "12"
+   },
+   "relationships": {
+      "systems": [
+         { "id": "dnd5e",
+            "type": "system",
+            "compatibility": {} } ],
+      "recommends": [
+         { "id": "action-pack",
+            "type": "module",
+            "compatibility": {}
+         },
+         { "id": "trinium-chat-buttons",
+            "type": "module",
+            "compatibility": {}
+         },
+         { "id": "foundry-taskbar",
+            "type": "module",
+            "compatibility": {}
+         },
+         { "id": "garhis-grotto-theme",
+            "type": "module",
+            "compatibility": {}
+         }
+      ]
+   }
+}
