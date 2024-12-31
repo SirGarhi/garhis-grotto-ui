@@ -1,145 +1,1264 @@
 /*
-   * Summary of Changes
-      * Background, Border, and Text color definitions for every wlement
-      * Hover, Active, and Focus sub-definitions where relevent
-      * Distinct settings for Window, Window-Content, Window-Aside, and Window-Tooltip
-      * Font, Size, Color settings for Text Tags as well as explicitly for many elements
-      * Alternate theme for Window, Button, and Text Tags
-      * Module support for
-         - Action Pack
-         - Ripper's Taskbar
+	* Summary of Changes
+		* Background, Border, and Text color definitions for every wlement
+		* Hover, Active, and Focus sub-definitions where relevent
+		* Distinct settings for Window, Window-Content, Window-Aside, and Window-Tooltip
+		* Font, Size, Color settings for Text Tags as well as explicitly for many elements
+		* Alternate ui for Window, Button, and Text Tags
+		* Module support for
+			- Action Pack
+			- Ripper's Taskbar
 
-      * Subsettings for right-hand Sidebar (see gg-theme-sidebar.css)
-         * Module support for
-            - Ripper's File-Picker
-            - Chris Premades Macro and Effect directories
+		* Subsettings for right-hand Sidebar (see gg-ui-sidebar.css)
+			* Module support for
+				- Ripper's File-Picker
+				- Chris Premades Macro and Effect directories
 
-      * Subsettings for Chatlog (see gg-theme-chat.css)
-         * Module support for
-            - Support for Trinium Chat Buttons
-            - Support for Polyglot
+		* Subsettings for Chatlog (see gg-ui-chat.css)
+			* Module support for
+				- Support for Trinium Chat Buttons
+				- Support for Polyglot
 
-      * Subsettings for Journal (see gg-theme-journal.css)
-      * Subsettings for TidySheet5e (see gg-theme-tidysheet.css)
+		* Subsettings for Journal (see gg-ui-journal.css)
+		* Subsettings for TidySheet5e (see gg-ui-tidysheet.css)
 */
 
-body.game.garhis-grotto.ui {
+body.game.garhis-grotto-ui {
 /*
-   *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
-   *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
-   *  *  *  *  *  *  *  *  *  * Hiding Elements *  *  *  *  *  *  *  *  *  *  *  *  *
-   *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
-   *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
+	*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
+	*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
+	*  *  *  *  *  *  *  *  *  *  VARIABLE DEFINITION  *  *  *  *  *  *  *  *  *  *  *
+	*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
+	*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
 */
 
-   & li[data-tool="target"],
-   & li[data-tool="togglebreak"],
-   & li[data-tool="clearTargets"],
-   /* & a[data-tab="cards"], */
-   & #settings.settings-sidebar button[data-action="invitations"] {
-	   display: none;
-   }
+	--gg-ui-background-texture-parchment-75: url('../../garhis-grotto-resources/assets/art/textures/gg-resources-texture-parchment-75.webp');
+	--gg-ui-background-texture-parchment-50: url('../../garhis-grotto-resources/assets/art/textures/gg-resources-texture-parchment-50.webp');
+	--gg-ui-background-texture-parchment-25: url('../../garhis-grotto-resources/assets/art/textures/gg-resources-texture-parchment-25.webp');
+	--gg-ui-background-texture-parchment-alt-75: url('../../garhis-grotto-resources/assets/art/textures/gg-resources-texture-parchment-alt-75.webp');
+	--gg-ui-background-texture-parchment-alt-50: url('../../garhis-grotto-resources/assets/art/textures/gg-resources-texture-parchment-alt-50.webp');
+	--gg-ui-background-texture-parchment-alt-25: url('../../garhis-grotto-resources/assets/art/textures/gg-resources-texture-parchment-alt-25.webp');
+	--gg-ui-background-texture-parchment-light-75: url('../../garhis-grotto-resources/assets/art/textures/gg-resources-texture-parchment-light-75.webp');
+	--gg-ui-background-texture-parchment-light-50: url('../../garhis-grotto-resources/assets/art/textures/gg-resources-texture-parchment-light-50.webp');
+	--gg-ui-background-texture-parchment-light-25: url('../../garhis-grotto-resources/assets/art/textures/gg-resources-texture-parchment-light-25.webp');
+
+	--gg-ui-background-texture-overlay-top-right:
+		url("../../garhis-grotto-resources/assets/art/textures/gg-ui-texture-overlay-top-right.webp");
+	--gg-ui-background-texture-overlay-bottom-left:
+		url("../../garhis-grotto-resources/assets/art/textures/gg-ui-texture-overlay-bottom-left.webp");
+
+	--gg-ui-prime-background:
+			var(--gg-ui-background-texture-parchment-75),
+			hsl(260, 1%, 1%);
+
+	--gg-ui-prime-border: 1px solid hsl(260, 60%, 50%);
+	--gg-ui-prime-separator: 2px ridge hsl(310, 100%, 50%);
+	--gg-ui-prime-underline: 2px groove hsl(310, 40%, 50%);
+	--gg-ui-alt-separator: 2px groove hsl(285, 60%, 50%);
+
+	--gg-ui-background-color-alt: hsl(320, 80%, 20%);
+	--gg-ui-background-alt:
+		var(--gg-ui-background-texture-parchment-75),
+		var(--gg-ui-background-color-alt);
+
+	--gg-ui-border-alt: 2px groove hsl(320, 100%, 50%);
+	--gg-ui-border-separator-alt: 2px ridge hsl(320, 100%, 50%);
+
+	--gg-ui-alt-light-background-color: hsl(260, 75%, 75%);
+	--gg-ui-alt-light-background:
+		var(--gg-ui-alt-light-background-texture-parchment-75),
+		var(--gg-ui-alt-light-background-color);
+
+
+	--gg-ui-shadow: hsl(25, 100%, 50%);
+	--gg-ui-shadow-highlight: hsl(330, 100%, 50%);
+	--gg-ui-shadow-active: hsl(300, 100%, 50%);
+	--gg-ui-shadow-alt: hsl(50, 100%, 50%);
+	--gg-ui-shadow-highlight-alt: hsl(260, 100%, 50%);
+	--gg-ui-shadow-active-alt: hsl(260, 80%, 20%);
+
+	--gg-ui-link-color: hsl(25, 100%, 50%);
+	--gg-ui-selection-text-color: hsl(260, 20%, 10%);
+	--gg-ui-selection-color: hsl(260, 75%, 85%);
+	--gg-ui-link-text-color-alt: hsl(290, 100%, 75%);
+	--gg-ui-selection-text-color-alt: hsl(50, 50%, 90%);
+	--gg-ui-selection-color-alt: hsl(260, 40%, 20%);
+
+	--gg-ui-scrollbar-color: hsla(25, 100%, 50%, 60%);
+	--gg-ui-pause-color-border: hsla(260, 100%, 40%, 40%);
+
+	/*
+		*  *  *  *  *  *  *  *  *  *  *
+		*  *  *  * TEXT TAGS *  *  *  *
+		*  *  *  *  *  *  *  *  *  *  *
+	*/
+		/*
+			*  *  * HEADER  *  *  *
+		*/
+		--gg-ui-header-1-color: hsl(50, 100%, 40%);
+		--gg-ui-header-1-font: 'EB Garamond', serif;
+		--gg-ui-header-1-size: 3rem;
+		--gg-ui-header-2-color: hsl(50, 100%, 40%);
+		--gg-ui-header-2-font: 'EB Garamond', serif;
+		--gg-ui-header-2-size: 2rem;
+		--gg-ui-header-3-color: hsl(50, 100%, 40%);
+		--gg-ui-header-3-font: 'EB Garamond', serif;
+		--gg-ui-header-3-size: 1.25rem;
+
+		/*
+				*  *  * SUBHEADER *  *  *
+		*/
+		--gg-ui-header-4-color: hsl(40, 100%, 40%);
+		--gg-ui-header-4-font: 'Inknut Antiqua', serif;
+		--gg-ui-header-4-size: 2.5rem;
+		--gg-ui-header-5-color: hsl(40, 100%, 40%);
+		--gg-ui-header-5-font: 'Inknut Antiqua', serif;
+		--gg-ui-header-5-size: 1.5rem;
+		--gg-ui-header-6-color: hsl(40, 100%, 40%);
+		--gg-ui-header-6-font: 'Inknut Antiqua', serif;
+		--gg-ui-header-6-size: 1rem;
+
+		/*
+			*  *  *  BODY  *  *  *
+		*/
+		--gg-ui-body-color: hsl(50, 90%, 90%);
+		--gg-ui-body-font: 'Alice', serif;
+		--gg-ui-body-color-alt: hsl(30, 100%, 60%);
+		--gg-ui-body-font-alt: 'Libre Franklin', serif;
+		--gg-ui-body-size: 1rem;
+		--gg-ui-body-size-big: 1.15rem;
+		--gg-ui-body-size-small: 0.85rem;
+		--gg-ui-body-size-tiny: 0.70rem;
+
+/*
+	*  *  *  *  *  *  *  *  *  *
+	*  *  * WINDOW | APP *  *  *
+	*  *  *  *  *  *  *  *  *  *
+*/
+
+	/*
+		*  *  * BASE *  *  *
+	*/
+
+	--gg-ui-window-background:
+		var(--gg-ui-background-texture-parchment-75),
+		hsl(260, 5%, 10%);;
+	--gg-ui-window-border: 2px outset hsl(50, 100%, 50%);
+	--gg-ui-window-text-color: var(--gg-ui-body-color);
+	--gg-ui-window-text-font: var(--gg-ui-body-font);
+	--gg-ui-window-text-size: var(--gg-ui-body-size);
+
+	/*
+		*  *  * HEADER *  *  *
+	*/
+	--gg-ui-window-header-background-color: hsla(260, 100%, 50%, 50%);
+	--gg-ui-window-header-separator: 2px ridge hsl(50, 100%, 50%);
+	/* --gg-ui-window-header-text-color: hsl(50, 100%, 50%);
+	--gg-ui-window-header-text-font: 'EB Garamond', serif;
+	--gg-ui-window-header-text-size: var(--gg-ui-header-3-size); */
+
+	/*
+		*  *  * CONTENT *  *  *
+	*/
+	--gg-ui-content-background-overlay: hsla(250, 100%, 50%, 5%);
+	--gg-ui-content-text-color: var(--gg-ui-window-text-color);
+	--gg-ui-content-text-font: var(--gg-ui-body-font);
+	--gg-ui-content-text-size: var(--gg-ui-body-size);
+
+	/*
+		*  *  *   Aside   *  *  *  *
+	*/
+	--gg-ui-aside-background-overlay: hsla(300, 100%, 50%, 5%);
+	--gg-ui-aside-separator: 2px ridge hsl(50, 100%, 50%);
+	--gg-ui-aside-text-color: var(--gg-ui-window-text-color);
+	--gg-ui-aside-text-font: var(--gg-ui-header-3-font);
+	--gg-ui-aside-text-size: var(--gg-ui-body-size-big);
+	/*
+		*  *  *  Tooltip  *  *  *  *
+	*/
+	--gg-ui-border-color-window-tooltip: hsl(50, 100%, 50%);
+	--gg-ui-tooltip-border: 2px inset hsl(50, 100%, 50%);
+	--gg-ui-tooltip-text-color: var(--gg-ui-window-text-color);
+	--gg-ui-tooltip-text-font: var(--gg-ui-body-font-alt);
+	--gg-ui-tooltip-text-size: var(--gg-ui-body-size-tiny);
+/*
+	*  *  *  *  *  *  *  *  *  *
+	*  *  *  * BUTTON *  *  *  *
+	*  *  *  *  *  *  *  *  *  *
+*/
+	/*
+		*  *  * BASE *  *  *
+	*/
+	--gg-ui-button-background:
+		var(--gg-ui-background-texture-parchment-75),
+		hsl(260, 5%, 20%);
+	--gg-ui-button-border-color: hsl(50, 100%, 40%);
+	--gg-ui-button-border-style: groove ridge ridge groove;
+	--gg-ui-button-border-size: 3px;
+	--gg-ui-button-text-color: var(--gg-ui-window-text-color);
+	--gg-ui-button-text-font: var(--gg-ui-header-1-font);
+	--gg-ui-button-text-size: var(--gg-ui-body-size);
+	--gg-ui-alt-button-background:
+		#392978
+		var(--gg-ui-background-texture-parchment-light-75);
+	--gg-ui-alt-button-border: 2px solid #FFB600;
+	--gg-ui-alt-button-text-color: #CDC68A;
+	--gg-ui-alt-button-text-font: var(--gg-ui-header-2-font);
+	--gg-ui-alt-button-text-size: var(--gg-ui-body-size);
+	/*
+		*  *  * ACTIVE *  *  *
+	*/
+	--gg-ui-button-background-color-active: #550055;
+	--gg-ui-button-border-color-active: hsl(290, 60%, 75%);
+	--gg-ui-button-text-color-active: hsl(50, 50%, 90%);
+	--gg-ui-button-text-size-active: var(--gg-ui-body-size-big);
+	--gg-ui-alt-button-background-color-active: #550055;
+	--gg-ui-alt-button-border-color-active: #FFD500;
+	--gg-ui-alt-button-text-color-active: #FFD500;
+	--gg-ui-alt-button-text-size-active: var(--gg-ui-body-size-big);
+	--gg-ui-alt-button-shadow-active: 0 0 5px 3px #CC5C00;
+	/*
+		*  *  * HOVER *  *  *
+	*/
+	--gg-ui-button-background-color-hover: hsl(255, 100%, 20%);
+	--gg-ui-button-border-color-hover: hsl(310, 100%, 50%);
+	--gg-ui-button-text-color-hover: hsl(30, 100%, 50%);
+	--gg-ui-button-text-size-hover: var(--gg-ui-body-size-big);
+	--gg-ui-alt-button-background-color-hover: #FFD500;
+	--gg-ui-alt-button-border-color-hover: #804070;
+	--gg-ui-alt-button-text-color-hover: #574080;
+	--gg-ui-alt-button-text-size-hover: var(--gg-ui-body-size-big);
+	--gg-ui-alt-button-shadow-hover: 0 0 4px 2px #FF00C2;
+
+/*
+	*  *  *  *  *  *  *  *  *  *  *
+	*  *  *  INLINE BUTTON  *  *  *
+	*  *  *  *  *  *  *  *  *  *  *
+*/
+	/*
+		*  *  * BASE *  *  *
+	*/
+	--gg-ui-text-font-inline-button: 'Inknut Antiqua', serif;
+	--gg-ui-background-color-inline-button: hsla(241, 70%, 69%, 0.749);
+	--gg-ui-border-color-inline-button: hsl(259, 100%, 15%);
+	--gg-ui-text-color-inline-button: hsl(240, 10%, 15%);
+	/*
+		*  *  * HOVER *  *  *
+	*/
+	--gg-ui-background-color-inline-button-hover: hsl(43, 17%, 76%);
+	--gg-ui-border-color-inline-button-hover: hsl(260, 70%, 25%);
+	--gg-ui-text-color-inline-button-hover: hsl(240, 10%, 15%);
+	/*
+		*  *  * ACTIVE *  *  *
+	*/
+	--gg-ui-background-color-inline-button-active: hsl(285, 80%, 20%);
+	--gg-ui-border-color-inline-button-active: hsl(310, 100%, 50%);
+	--gg-ui-text-color-inline-button-active: hsl(45, 33%, 93%);
+
+/*
+	*  *  *  *  *  *  *  *  *  *  *  *  *
+	*  *  *  *  FORMS & FIELDS *  *  *  *
+	*  *  *  *  *  *  *  *  *  *  *  *  *
+*/
+	/*
+		*  *  * BASE *  *  *
+	*/
+	--gg-ui-form-border: 1px solid hsl(285, 80%, 20%);
+	--gg-ui-form-border-color-focus: hsl(253, 41%, 33%);
+	--gg-ui-form-label-color: hsl(40, 5%, 90%);
+	--gg-ui-form-note-color: hsl(50, 80%, 80%);
+	/*
+		*  *  * INPUT *  *  *
+	*/
+	--gg-ui-input-background: hsl(30, 30%, 80%);
+	--gg-ui-input-border: 1px solid hsl(285, 80%, 20%);
+	--gg-ui-input-text-color: hsl(260, 40%, 20%);
+	--gg-ui-input-text-color-placeholder: hsl(265, 20%, 10%);
+	/*
+		*  *  * SELECT *  *  *
+	*/
+	--gg-ui-select-background: hsl(30, 30%, 80%);
+	--gg-ui-select-border: 1px solid hsl(285, 80%, 20%);
+	--gg-ui-select-text-color: hsl(260, 40%, 20%);
+	--gg-ui-select-option-background: hsla(30, 10%, 85%, 80%);
+	--gg-ui-select-option-text-color: hsl(260, 34%, 13%);
+	/*
+		*  *  * BUTTON *  *  *
+	*/
+		/*
+			*  *  * BASE *  *  *
+		*/
+	--gg-ui-form-button-background: hsl(255, 100%, 20%);
+	--gg-ui-form-button-border: 1px solid hsl(50, 100%, 40%);
+	--gg-ui-form-button-text-color: hsl(50, 58%, 77%);
+	--gg-ui-form-button-text-font: 'Inknut Antiqua', serif;
+	--gg-ui-form-button-text-size: var(--gg-ui-body-size-small);
+		/*
+			*  *  * HOVER *  *  *
+		*/
+	--gg-ui-form-button-background-hover: hsl(255, 100%, 20%);
+	--gg-ui-form-button-border-color-hover: hsl(310, 100%, 50%);
+	--gg-ui-form-button-text-color-hover: hsl(30, 100%, 50%);
+		/*
+			*  *  * ACTIVE *  *  *
+		*/
+	--gg-ui-form-button-background-active: hsl(285, 80%, 20%);
+	--gg-ui-form-button-border-color-active: hsl(290, 58%, 77%);
+	--gg-ui-form-button-text-color-active: hsl(50, 48%, 90%);
+
+
+
+
+/*
+	*  *  *  *  *  *  *  *  *  *
+	*  *  * DIRECTORY *  *  *  *
+	*  *  *  *  *  *  *  *  *  *
+*/
+	/*
+		*  *  * HEADER *  *  *
+	*/
+		--gg-ui-diretory-header-size-height: 30px;
+	/*
+		*  *  * ITEM *  *  *
+	*/
+		--gg-ui-item-size-height: 30px;
+
+/*
+	*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
+	*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
+	*  *  *  *  *  *  *	*	SIDEBAR  *  *  *  *  *  *  *  *  *
+	*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
+	*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
+*/
+
+/*
+	*  *  *  *  *  *  *  *  *  *
+	*  *  *  NAV HEADER  *  *  *
+	*  *  *  *  *  *  *  *  *  *
+*/
+	--gg-ui-sidebar-nav-header-size-line-height: 30px;
+	/*
+		*  *  * TAB BUTTON *  *  *
+	*/
+	--gg-ui-sidebar-background-size-tab-button-width: 24px;
+
+/*
+	*  *  *  *  *  *  *  *  *  *
+	*  *  * DIRECTORY *  *  *  *
+	*  *  *  *  *  *  *  *  *  *
+*/
+	/*
+		*  *  * HEADER *  *  *
+	*/
+	--gg-ui-sidebar-diretory-header-size-line-height: 30px;
+	/*
+		*  *  * ITEM *  *  *
+	*/
+	--gg-ui-sidebar-item-size-height: 30px;
+
+
+/*
+	*  *  *  *  *  *  *  *  *  *
+	*  *  * CHAT MESSAGE *  *  *
+	*  *  *  *  *  *  *  *  *  *
+*/
+	/*
+		*  *  * HEADER *  *  *
+	*/
+	--gg-ui-background-size-message-header-height: 1.3rem;
+	--gg-ui-text-size-message-header-title: 1.125rem;
+	--gg-ui-text-size-message-header-secondary: 1.075rem;
+	/*
+		*  *  * DESCRIPTION *  *  *
+	*/
+	--gg-ui-background-size-card-description-height: 0.9rem;
+
+
+/*
+	*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
+	*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
+	*  *  *  *  *  *  ELEMENT STYLES *  *  *  *  *  *  *  *  *
+	*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
+	*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
+*/
+	/*
+		*  *  * BASE *  *  *
+	*/
+	color: var(--gg-ui-body-color);
+	font: var(--gg-ui-body-font);
+	font-size: 14px;
+	border-radius: 0;
+	--minimized-width: 200px;
+	--ft-height: 4%;
+/*
+	*  *  *  *  *  *  *  *  *  *  *
+	*  *  *  * SHARED *  *  *  *  *
+	*  *  *  *  *  *  *  *  *  *  *
+*/
+	/*
+		*  *  * TEXT TAGS *  *  *
+	*/
+	& h1 {
+		color: var(--gg-ui-header-1-color);
+		font: var(--gg-ui-header-1-font);
+		font-size: var(--gg-ui-header-1-size);
+	}
+	& h2 {
+		color: var(--gg-ui-header-1-color);
+		font: var(--gg-ui-header-1-font);
+		font-size: var(--gg-ui-header-1-size);
+	}
+	& h3 {
+		color: var(--gg-ui-header-1-color);
+		font: var(--gg-ui-header-1-font);
+		font-size: var(--gg-ui-header-1-size);
+	}
+	& h4 {
+		color: var(--gg-ui-header-1-color);
+		font: var(--gg-ui-header-1-font);
+		font-size: var(--gg-ui-header-1-size);
+	}
+	& h5 {
+		color: var(--gg-ui-header-1-color);
+		font: var(--gg-ui-header-1-font);
+		font-size: var(--gg-ui-header-1-size);
+	}
+	& h6 {
+		color: var(--gg-ui-header-1-color);
+		font: var(--gg-ui-header-1-font);
+		font-size: var(--gg-ui-header-1-size);
+	}
+	& p {
+		color: var(--gg-ui-body-color);
+		font: var(--gg-ui-body-font);
+		font-size: var(--gg-ui-body-size);
+	}
+	/*
+		*  *  *  *  *  *  *  *  *  *  *
+		*  *  *  * WINDOW | APP *  *  *
+		*  *  *  *  *  *  *  *  *  *  *
+	*/
+	& .app,
+	& .window-app,
+	& .application {
+		background: var(--gg-ui-window-background);
+		border: var(--gg-ui-window-border);
+		color: var(--gg-ui-window-text-color);
+		font: var(--gg-ui-window-text-font);
+		font-size: var(--gg-ui-window-text-size);
+		max-height: 80%;
+		max-width: calc(100vw * 0.4);
+		box-sizing: border-box;
+		height: max-content;
+		width: max-content;
+		margin: 0;
+		padding: 0;
+		& .window-header {
+			/* height: var(--gg-ui-background-size-window-header-height); */
+			background: var(--gg-ui-window-header-background-color);
+			border-bottom: var(--gg-ui-window-header-separator);
+			/* &>h4.window-title {
+				color: var(--gg-ui-text-color-window-header);
+				font: var(--gg-ui-text-font-window-header-title);
+				font-size: var(--gg-ui-text-size-window-header-title);
+			} */
+		}
+		& .window-content,
+		& .journal-entry-content {
+			background: var(--gg-ui-content-background-overlay);
+			color: var(--gg-ui-content-text-color);
+			font: var(--gg-ui-content-text-font);
+			font-size: var(--gg-ui-content-text-size);
+			/* display: flex;
+			flex-direction: column;
+			flex-wrap: nowrap;
+			justify-content: flex-start;
+			padding: 0px;
+			overflow-y: auto;
+			overflow-x: hidden; */
+		}
+		& aside.sidebar {
+			background: var(--gg-ui-aside-background-overlay);
+			border-right: var(--gg-ui-aside-separator);
+			color: var(--gg-ui-aside-text-color);
+			font: var(--gg-ui-aside-text-font);
+			font-size: var(--gg-ui-aside-text-size);
+			/* &>nav.tabs {
+				& a.item.category-tab {
+					border-bottom: 1px solid var(--gg-ui-border-color-window-seperator);
+					&:active {
+						text-shadow: 0 0 10px var(--gg-ui-shadow-color-base);
+					}
+				}
+			} */
+		}
+		& :is(#tooltip, .locked-tooltip) {
+			/* background: var(--gg-ui-background-color-gradient-window-tooltip); */
+			border: var(--gg-ui-tooltip-border);
+			color: var(--gg-ui-tooltip-text-color);
+			font: var(--gg-ui-tooltip-text-font);
+			font-size: var(--gg-ui-tooltip-text-size);
+		}
+	}
+	/*
+		*  *  *  *  *  *  *
+		*  *  BUTTON   *  *
+		*  *  *  *  *  *  *
+	*/
+	& button {
+		background: var(--gg-ui-button-background);
+		border-color: var(--gg-ui-button-border-color);
+		border-style: var(--gg-ui-button-border-style);
+		border-width: var(--gg-ui-button-border-size);
+		color: var(--gg-ui-button-text-color);
+		font: var(--gg-ui-button-text-font);
+		font-size: var(--gg-ui-button-text-size);
+		&.active {
+			background-color: var(--gg-ui-button-background-color-active);
+			border-color: var(--gg-ui-button-border-color-active);
+			color: var(--gg-ui-button-text-color-active);
+			font-size: var(--gg-ui-button-text-size-active);
+		}
+		&.hover {
+			background-color: var(--gg-ui-button-background-color-hover);
+			border-color: var(--gg-ui-button-border-color-hover);
+			color: var(--gg-ui-button-text-color-hover);
+			font-size: var(--gg-ui-button-text-size-acthoverive);
+		}
+		> i {
+			margin-right: 0;
+		}
+	}
+	/*
+		*  *  *  *  *  *  *  *  *  *  *  *  *
+		*  *  *  *  *   FORM    *  *  *  *  *
+		*  *  *  *  INPUT|SELECT   *  *  *  *
+		*  *  *  *  *  *  *  *  *  *  *  *  *
+	*/
+	& form {
+		border: var(--gg-ui-form-border);
+		& .notes,
+		& .hint {
+			color: var(--gg-ui-form-note-color);
+		}
+		& label {
+			color: var(--gg-ui-form-label-color);
+		}
+		&:focus {
+			border-color: var(--gg-ui-form-border-color-focus);
+		}
+		& input,
+		& #module-management input {
+			background: var(--gg-ui-input-background);
+			border: var(--gg-ui-input-border);
+			color: var(--gg-ui-input-text-color);
+			&:placeholder {
+				color: var(--gg-ui-input-text-color-placeholder);
+			}
+		}
+		& select,
+		& #module-management select {
+			background: var(--gg-ui-select-background);
+			border: var(--gg-ui-select-border);
+			color: var(--gg-ui-select-text-color);
+			& > option {
+				background: var(--gg-ui-select-option-background);
+				color: var(--gg-ui-select-option-text-color);
+			}
+		}
+		& button {
+			background: var(--gg-ui-form-button-background);
+			border: var(--gg-ui-form-button-border);
+			color: var(--gg-ui-form-button-text-color);
+			&:active {
+				background-color: var(--gg-ui-form-button-background-active);
+				border-color: var(--gg-ui-form-button-border-color-active);
+				color: var(--gg-ui-form-button-text-color-active);
+			}
+			&:hover {
+				background-color: var(--gg-ui-form-button-background-hover);
+				border-color: var(--gg-ui-form-button-border-color-hover);
+				color: var(--gg-ui-form-button-text-color-hover);
+			}
+
+		}
+	}
+	/* FilePicker Support */
+	& .filepicker .standard-form {
+		color: var(--gg-ui-text-color-form-label);
+	}
+	/* Youtube Player Support */
+	& #sidebar-video-player button {
+		display: flex;
+		align-items: center;
+		justify-items: center;
+		padding: 2px;
+		background: var(--gg-ui-background-color-button);
+		border: 1px solid var(--gg-ui-border-color-button);
+		color: var(--gg-ui-text-color-button);
+	}
+	& #interface {
+		display: flex;
+		flex-flow: row nowrap;
+		flex: 1 0 auto;
+		width: 100%;
+		max-width: 100%;
+		margin: 0;
+		scrollbar-width: none;
+	}
+	/*
+		*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
+		*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
+		*  *  *  *  *  *  UI LEFT  *  *  *  *  *  *  *
+		*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
+		*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
+	*/
+
+	& #action-pack.is-open {
+		--action-pack-width: 10%;
+		& div.action-pack__container {
+			width: 100%;
+			background: var(--gg-ui-prime-background);
+			border-right: var(--gg-ui-prime-separator);
+			border-radius: 0;
+		}
+		& div.action-pack__end-turn {
+			width: 100%
+		}
+	}
+
+	& #ui-left {
+		height: 100%;
+		min-width: unset;
+		width: 5%;
+		justify-content: space-between;
+		padding-top: 0.5rem;
+
+		& #logo {
+			display: none;
+		}
+		/*
+			*  *  *  *  *  *  *  *  *  *
+			*  * LEFT-SIDE-CONTROLS *  *
+			*  *  *  *  *  *  *  *  *  *
+		*/
+		& #controls {
+			max-width: 100%;
+			margin: 0;
+			margin-left: 0.25rem;
+			padding: 0;
+			flex-flow: row nowrap;
+			& ol.control-tools {
+				margin: 0.2rem 0 0.2rem 0.5rem;
+				-webkit-margin-collapse: collapse;
+				& li.scene-control,
+				& li.control-tool {
+					background: var(--gg-ui-alt-button-background);
+					border: var(--gg-ui-alt-button-border);
+					color: var(--gg-ui-alt-button-text-color);
+					box-shadow: none;
+					border-radius: 0;
+					margin: 0.1rem 0 0.4rem 0.05rem;
+					box-sizing: border-box;
+					width: 2.65rem;
+					height: 2.65rem;
+					&.active {
+						background-color: var(--gg-ui-alt-button-background-color-active);
+						border-color: var(--gg-ui-alt-button-border-color-active);
+						color: var(--gg-ui-alt-button-text-color-active);
+						box-shadow: var(--gg-ui-alt-button-shadow-active);
+					}
+					&:hover {
+						background-color: var(--gg-ui-alt-button-background-color-hover);
+						border-color: var(--gg-ui-alt-button-border-color-hover);
+						color: var(--gg-ui-alt-button-text-color-hover);
+						box-shadow: var(--gg-ui-alt-button-shadow-hover);
+					}
+				}
+				& li[data-tool="target"],
+				& li[data-tool="togglebreak"],
+				& li[data-tool="clearTargets"] {
+					display: none;
+				}
+			}
+			& ol.sub-controls.control-tools[role='tabpanel'] {
+				max-height: unset;
+				flex-wrap: nowrap;
+				justify-content: space-around;
+			}
+		}
+		& aside#players {
+			background: var(--gg-ui-prime-background);
+			border: var(--gg-ui-prime-separator);
+			border-bottom: none;
+			border-radius: 0;
+			width: calc(100vw * 0.1);
+			margin: 0;
+			&>h3 {
+				color: var(--gg-ui-header-3-color);
+				font-size: var(--gg-ui-header-3-size);
+				border-bottom: var(--gg-ui-prime-underline);
+				& .players-mode {
+					color: var(--gg-ui-header-3-color);
+				}
+			}
+			& #player-list {
+				/* & li span.player-name.self {
+					color: unset;
+				} */
+				& li.player {
+					color: var(--gg-ui-body-color);
+				}
+				& li.gm {
+					color: var(--gg-ui-body-color-alt);
+				}
+			}
+			& div.rest-recovery-button-parent {
+				flex-flow: row nowrap;
+				justify-content: space-evenly;
+				align-items: center;
+				margin: 0;
+				border: none;
+				& button.rest-recovery-prompt-rest-button {
+					display: flex;
+					flex-flow: row nowrap;
+					justify-content: space-evenly;
+					align-items: center;
+					max-width: 40%;
+				}
+			}
+		}
+	}
+
+
+	/*
+		*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
+		*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
+		*  *  *  *  *  UI MIDDLE   *  *  *  *  *  *  *
+		*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
+		*  *  *  *  *  *  *  *  *  *  *  *  *  *  *  *
+	*/
+
+	& #ui-middle {
+		width: 70%;
+		&>header#ui-top {
+			margin-left: 0;
+			width: 100%;
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: flex-start;
+			min-height: 4%;
+			max-height: 4%;
+			padding-top: 12px;
+			/*
+					*  *  *  *  *  *  *  *  *  *
+					*  *  Navigation Bar *  *  *
+					*  *  *  *  *  *  *  *  *  *
+			*/
+			&>a#nav-moulinette-toggle {
+				background: var(--gg-ui-background-color-button);
+				border: 1px solid var(--gg-ui-border-color-button);
+				border-radius: 0;
+				color: var(--gg-ui-text-color-button);
+				padding: 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 36px;
+				min-width: 36px;
+				line-height: unset;
+				max-height: unset;
+				margin: unset;
+				position: relative;
+			}
+			& #navigation {
+				align-self: flex-start;
+				margin-top: 0;
+				margin-left: 6px;
+				&>nav.monks-scene-navigation {
+					align-items: center;
+					justify-content: flex-start;
+					flex-basis: 36px;
+					padding: 0;
+					background: linear-gradient(to right,
+							var(--gg-ui-background-color-gradient-1),
+							var(--gg-ui-background-color-gradient-2),
+							var(--gg-ui-background-color-gradient-1)),
+						var(--gg-ui-background-texture-parchment);
+					border: 1px solid var(--gg-ui-border-color-button);
+					border-radius: 0;
+					max-height: 36px;
+					& div.nav-item.nav-item-container {
+						align-items: center;
+						justify-content: flex-start;
+						border: unset;
+						margin: 0;
+						height: 32px;
+						width: 32px;
+						& button#foundryRegionsEditor {
+							background: var(--gg-ui-background-color-button);
+							/* border: 1px solid var(--gg-ui-border-color-button); */
+							border-radius: 0;
+							color: var(--gg-ui-text-color-button);
+							margin: -1px 0 8px 1px;
+							padding: 0;
+							box-shadow: none;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							min-width: 32px;
+							min-height: 32px;
+							max-height: 32px;
+							max-width: 32px;
+
+							&:active {
+								background-color: var(--gg-ui-background-color-button-active);
+								border: 1px solid var(--gg-ui-border-color-button-active);
+								color: var(--gg-ui-text-color-button-active);
+							}
+
+							&:hover {
+								background-color: var(--gg-ui-background-color-button-hover);
+								border: 1px solid var(--gg-ui-border-color-button-hover);
+								color: var(--gg-ui-text-color-button-hover);
+							}
+						}
+					}
+					& .scene-list {
+						padding: unset;
+						margin: 0 0 0 4px;
+						min-height: 36px;
+						max-height: 36px;
+						background: unset;
+						border: unset;
+						&> li {
+							height: 36px;
+							&> a {
+								background: unset;
+								border: unset;
+								box-shadow: unset;
+								color: unset;
+								&.scene-name.folder-name {
+									background-color: var(--gg-ui-background-color-button);
+									border: 1px solid var(--gg-ui-border-color-button);
+									border-radius: 0;
+									color: var(--gg-ui-text-color-button);
+									&:active {
+										background-color: var(--gg-ui-background-color-button-active);
+										border: 1px solid var(--gg-ui-border-color-button-active);
+										color: var(--gg-ui-text-color-button-active);
+									}
+
+									&:hover {
+										background-color: var(--gg-ui-background-color-button-hover);
+										border: 1px solid var(--gg-ui-border-color-button-hover);
+										color: var(--gg-ui-text-color-button-hover);
+									}
+								}
+							}
+							&.scene.nav-item.gm[data-scene-id] {
+								display: none;
+							}
+						}
+						&> li.folder.expanded a {
+							height: 36px;
+							margin: unset;
+						}
+					}
+				}
+				& > nav.monks-scene-navigation.expanded.gm {
+					margin-left: 34px;
+					margin-top: 0;
+					padding: unset;
+					border: unset;
+					background: unset;
+					&> .scene-list li.scene.view a {
+						background-color: var(--gg-ui-background-color-button);
+						border: 1px solid var(--gg-ui-border-color-button);
+						border-radius: 0;
+						color: var(--gg-ui-text-color-button);
+					}
+				}
+			}
+		}
+		& #ui-bottom {
+			width: 100%;
+		}
+	}
+
+	& #fast-tooltip {
+		position: relative;
+		top: 90px;
+		left: 180px;
+		width: max-content;
+		max-width: 20%;
+		padding: 6px 6px;
+	}
+
+	/* Taskbar Support */
+	& #taskbar {
+		width: 67.5%;
+		height: 4%;
+		left: 20%;
+		font-size: var(--gg-ui-text-size-overlay-window-title);
+		color: var(--gg-ui-body-color);
+		background: linear-gradient(to right,
+				var(--gg-ui-background-color-gradient-1),
+				var(--gg-ui-background-color-gradient-2),
+				var(--gg-ui-background-color-gradient-1)),
+			var(--gg-ui-background-texture-parchment);
+		border-top: 2px ridge var(--gg-ui-border-color-window);
+	}
+
+	& #start-menu {
+		width: 25%;
+		left: 12.5%;
+	}
+
+	/*
+		*  *  *  *  *  *  *  *  *  *  *  *  *  *  *
+		*  *  *  *  *  *  *  *  *  *  *  *  *  *  *
+		*  *  *  *  *  * UI RIGHT  *  *  *  *  *  *
+		*  *  *  *  *  *  *  *  *  *  *  *  *  *  *
+		*  *  *  *  *  *  *  *  *  *  *  *  *  *  *
+	*/
+	& #ui-right {
+		max-width: 12.5%;
+		height: 100%;
+		&>#sidebar {
+			/*
+				*  *  *  *  *  *  *  *  *  *  *  *
+				*  *  *  * MAIN SIDEBAR *  *  *  *
+				*  *  *  *  *  *  *  *  *  *  *  *
+			*/
+			box-sizing: border-box;
+			max-height: 100%;
+			width: max-content;
+			max-width: 100%;
+			display: flex;
+			flex-flow: column;
+			align-items: flex-start;
+			justify-content: space-evenly;
+			padding: 4px;
+
+			/*
+				*  *  *  *  *  *  *  *  *  *  *  *
+				*  *  *  *  NAV HEADER  *  *  *  *
+				*  *  *  *  *  *  *  *  *  *  *  *
+			*/
+			& #sidebar-tabs {
+				display: flex;
+				flex-flow: row wrap;
+				align-items: center;
+				justify-content: space-around;
+				box-sizing: border-box;
+				height: 100%;
+				max-height: unset;
+				min-height: unset;
+				width: 100%;
+				padding: 0;
+				margin: 0;
+				font-size: var(--gg-ui-text-size-window-header-title-alt);
+
+				&>.item,
+				&>.collapse {
+					width: 10%;
+					height: 40%;
+					box-sizing: border-box;
+					line-height: 100%;
+					display: flex;
+					flex: 1 1 auto;
+					align-items: center;
+					justify-content: center;
+					padding: 4px 0;
+					margin: 2px 6px;
+					font-weight: normal;
+					& > i[class^=fa] {
+						padding: 0;
+						margin: 0;
+					}
+				}
+			}
+			& #sidebar-tabs>.item[data-tab="cards"],
+			& #settings.settings-sidebar button[data-action="invitations"] {
+				display: none;
+			}
+
+			/*
+				*  *  *  *  *  *  *  *  *  *  *
+				*  *  *  Directories *  *  *  *
+				*  *  *  *  *  *  *  *  *  *  *
+			*/
+			& > .directory {
+				width: 100%;
+				& .directory-header {
+					display: flex;
+					flex: none;
+					flex-flow: column nowrap;
+					align-items: center;
+					justify-content: space-around;
+					width: 100%;
+					margin-top: 6px;
+					padding: 3px 6px;
+					& .header-search {
+						flex-flow: row nowrap;
+						flex: 1 1 auto;
+						align-items: center;
+						justify-content: space-between;
+						width: 90%;
+					}
+				}
+				& .directory-list {
+					& .directory-item {
+						line-height: 30px;
+						/*
+							*  *  *  *  *  *  *  *  *  *  *
+							*  *  *  *  Folders  *  *  *  *
+							*  *  *  *  *  *  *  *  *  *  *
+						*/
+						&.folder {
+							& .folder-header {
+								position: sticky;
+								text-shadow: none;
+								align-items: center;
+								justify-content: space-between;
+								&>h3 {
+									font-size: 14px;
+								}
+							}
+							&.collaped {
+								& .folder-header {
+									position: relative;
+								}
+							}
+						}
+						/*
+							*  *  *  *  *  *  *  *  *  *  *
+							*  *  *  COMPENDIUMS *  *  *  *
+							*  *  *  *  *  *  *  *  *  *  *
+						*/
+						&.compendium {
+							& .compendium-name {
+								width: max-content;
+								max-width: 80%;
+								padding: 3px 12px;
+								margin: 0;
+								text-align: left;
+								display: flex;
+								flex: 0 1 auto;
+								word-break: keep-all;
+								justify-items: space-between;
+							}
+						}
+					}
+				}
+				&  .folder-header>#context-menu,
+				&  .directory-item #context-menu,
+				&  .window-app #context-menu {
+					--context-menu-z-index: 100000;
+					--adjusted-context-spacing: calc(100% + 1px);
+					z-index: var(--context-menu-z-index);
+
+					&.expand-up,
+					&.expand-down {
+						top: var(--adjusted-context-spacing);
+					}
+				}
+			}
+			& #chat.chat-sidebar {
+			/*
+				*  *  *  *  *  *  *  *  *  *
+				*  *  * CHAT MESSAGE *  *  *
+				*  *  *  *  *  *  *  *  *  *
+			*/
+				/*
+					*  *  * HEADER *  *  *
+				*/
+				--gg-ui-chat-background-size-message-header-height: 1.3rem;
+
+				--gg-ui-chat-text-size-message-header-title: 1.125rem;
+
+				--gg-ui-chat-text-size-message-header-secondary: 1.075rem;
+					/*
+						*  *  * DESCRIPTION *  *  *
+					*/
+				--gg-ui-chat-background-size-card-description-height: 0.9rem;
+			}
+			& :is(.chat-popout, #chat-log) {
+				display: flex;
+				flex-flow: column;
+				flex: 1 1 auto;
+				align-items: center;
+				justify-items: center;
+				height: unset;
+				width: fit-content;
+				& li.message,
+				& li.chat-message {
+					&>header.message-header {
+						height: var(--gg-ui-chat-background-size-message-header-height);
+						& .title {
+							font-size: var(--gg-ui-chat-text-size-message-header-title);
+						}
+						& .subtitle,
+						& time {
+							font-size: var(--gg-ui-chat-text-size-message-header-secondary);
+						}
+					}
+					&.message-content {
+						height: var(--gg-ui-chat-background-size-message-header-height);
+						& .title {
+							font-size: var(--gg-ui-chat-text-size-message-header-title);
+						}
+						& .subtitle,
+						& time {
+							font-size: var(--gg-ui-chat-text-size-message-header-secondary);
+						}
+					}
+				}
+			}
+			/* Trinium Buttons */
+			& #chat-controls-wrapper>#chat-controls
+				& button{
+				& .tcb-button {
+					width: max-content;
+				}
+				/* & #tcb-combat-tracker-toggle {
+					flex: 0 0 60%;
+					animation: none;
+				} */
+			}
+		}
+	}
+}
+/*Chat Textfield Changes*/
+/* body.garhis.grotto-ui .chat-sidebar #chat-form,
+body.garhis.grotto-ui.dark-mode .chat-sidebar #chat-form {
+	 flex: 0 0 65px;
+	 margin: 2px 6px;
 }
 
-body.garhis-grotto.ui {
-   & #ui-left {
-      & #controls {
-         height: calc(100hw - var(--gg-ui-taskbar-size-height) - var(--gg-ui-players-size-height));
-      }
-   }
-   & #fast-tooltip {
-      position: relative;
-      top: 90px;
-      left: 180px;
-      width: max-content;
-      max-width: 20%;
-      padding: 6px 6px;
-   }
-   /* Taskbar Support */
-   & #taskbar {
-      width: calc(100vw - (600px));
-      height: 10rem;
-      left: 300px;
-   }
-   & #start-menu {
-      width: calc((100vw - 600px) / 2.5);
-   }
+/*Dice Output Changes*/
+/* body.garhis.grotto-ui .chat-sidebar .message .dice-result .dice-total,
+body.garhis.grotto-ui.dark-mode .chat-sidebar .message .dice-result .dice-total {
+	 font-size: var(--font-size-18);
 }
-/* body.garhis-grotto.theme #controls {
+body.garhis.grotto-ui .chat-sidebar .message .dice-result .dice-formula,
+body.garhis.grotto-ui .chat-sidebar .message .dice-result .dice-total,
+body.garhis.grotto-ui.dark-mode .chat-sidebar .message .dice-result .dice-total {
+	 padding: 0.25rem;
+}
+body.garhis.grotto-ui .chat-sidebar .message .dice-result .dice-tooltip .dice .dice-rolls,
+body.garhis.grotto-ui.dark-mode .chat-sidebar .message .dice-result .dice-tooltip .dice .dice-rolls {
+	 margin: 3px 0 3px 10px;
+}
+body.garhis.grotto-ui .chat-sidebar .message .dice-result .dice-tooltip .dice .total,
+body.garhis.grotto-ui.dark-mode .chat-sidebar .message .dice-result .dice-tooltip .dice .total {
+	 flex-basis: 40%;
+}
+body.garhis.grotto-ui .chat-sidebar .message .dice-result .dice-tooltip .dice .total .label,
+body.garhis.grotto-ui.dark-mode .chat-sidebar .message .dice-result .dice-tooltip .dice .total .label {
+	 font-size: var(--font-size-9);
+}
+body.garhis.grotto-ui .chat-sidebar .message .dice-result .dice-tooltip .dice .total .value,
+body.garhis.grotto-ui.dark-mode .chat-sidebar .message .dice-result .dice-tooltip .dice .total .value {
+	 font-size: var(--font-size-18);
+}
+body.garhis.grotto-ui .chat-sidebar .message .dice-result .dice-tooltip .tooltip-part.constant,
+body.garhis.grotto-ui.dark-mode .chat-sidebar .message .dice-result .dice-tooltip .tooltip-part.constant {
+	 min-height: 33px;
+}
+body.garhis.grotto-ui .chat-sidebar .message.round-marker{ padding: 0 0.3rem; } */
+
+/*MODULE FIX STYLINGS*/
+/*MidiQOL: Fixed Overflow Label Alignment*/
+/* body.garhis.grotto-ui .midi-qol-attack-roll,
+body.garhis.grotto-ui .midi-qol-damage-roll{
+	 display: flex;
+	 flex-direction: column;
+	 justify-content: flex-end;
+}
+body.garhis.grotto-ui .dnd5e2.chat-card { gap: 0.2rem; } */
+
+/*
+body.garhis.grotto-ui .dice-result .dice-total.success,
+body.garhis.grotto-ui .dice-result .dice-total.critical { background: #001000; }
+body.garhis.grotto-ui .dice-result .dice-total.failure,
+body.garhis.grotto-ui .dice-result .dice-total.fumble { background: #100000; } */
+/* body.garhis-grotto.ui #controls {
 	margin-top: 12px;
 } */
 
 /*General Chat Card Changes*/
-/* body.garhis-grotto.theme  .chat-sidebar .message .dnd5e2.chat-card .description {
-    padding-top: 0.15rem;
-    padding-bottom: 0.15rem;
-    margin-bottom: 0.15rem;
+/* body.garhis-grotto.ui  .chat-sidebar .message .dnd5e2.chat-card .description {
+	 padding-top: 0.15rem;
+	 padding-bottom: 0.15rem;
+	 margin-bottom: 0.15rem;
 }
-body.garhis-grotto.theme  .chat-sidebar .message .dnd5e2.chat-card .card-buttons {
-    gap: 0.25rem;
-    padding-bottom: 0.25rem;
+body.garhis-grotto.ui  .chat-sidebar .message .dnd5e2.chat-card .card-buttons {
+	 gap: 0.25rem;
+	 padding-bottom: 0.25rem;
 }
-body.garhis-grotto.theme  .chat-sidebar .message .dnd5e2.chat-card .pills .pill {
-    font-size: var(--font-size-9);
-    padding: 0.15rem 0.25rem;
+body.garhis-grotto.ui  .chat-sidebar .message .dnd5e2.chat-card .pills .pill {
+	 font-size: var(--font-size-9);
+	 padding: 0.15rem 0.25rem;
 }
-body.garhis-grotto.theme  .chat-sidebar .message .dnd5e2 button { padding: 0; }
+body.garhis-grotto.ui  .chat-sidebar .message .dnd5e2 button { padding: 0; }
 
-body.garhis-grotto.theme  :is(.chat-popout, #chat-log) .message .message-header { margin-bottom: 0.2rem; }
+body.garhis-grotto.ui  :is(.chat-popout, #chat-log) .message .message-header { margin-bottom: 0.2rem; }
 
-body.garhis-grotto.theme  :is(.chat-popout, #chat-log) .message.round-marker .message-header {
+body.garhis-grotto.ui  :is(.chat-popout, #chat-log) .message.round-marker .message-header {
 	margin-bottom: 0.25rem;
 }
-body.garhis-grotto.theme  :is(.chat-popout, #chat-log) .message:not(.dnd5e-cm-message){
+body.garhis-grotto.ui  :is(.chat-popout, #chat-log) .message:not(.dnd5e-cm-message){
 	text-align: justify;
 }
-body.garhis-grotto.theme  :is(.chat-popout, #chat-log) .message .message-header .flavor-text {
+body.garhis-grotto.ui  :is(.chat-popout, #chat-log) .message .message-header .flavor-text {
 	margin-block-start: 0px;
 }
 
-body.garhis-grotto.theme  #sidebar #chat-log .chat-message::before { opacity: 15%; }
-body.garhis-grotto.theme  :is(.chat-popout, #chat-log)>.message-content {
+body.garhis-grotto.ui  #sidebar #chat-log .chat-message::before { opacity: 15%; }
+body.garhis-grotto.ui  :is(.chat-popout, #chat-log)>.message-content {
 	padding: 0.5rem;
 } */
 
 /* FoundryVTT Directory Changes
-body.garhis-grotto-theme #actors li.folder > .folder-header,
-body.garhis-grotto-theme #items li.folder > .folder-header,
-body.garhis-grotto-theme #compendium li.folder > .folder-header,
-body.garhis-grotto-theme #scenes li.folder > .folder-header,
-body.garhis-grotto-theme #journal li.folder > .folder-header,
-body.garhis-grotto-theme #tables li.folder > .folder-header,
-body.garhis-grotto-theme #cards li.folder > .folder-header { padding: 0 6px; }
-body.garhis-grotto-theme #actors .directory-item.actor,
-body.garhis-grotto-theme #items .directory-item.item,
-body.garhis-grotto-theme #journal .directory-item.journalentry,
-body.garhis-grotto-theme #tables .directory-item.rolltable {
+body.garhis-grotto-ui #actors li.folder > .folder-header,
+body.garhis-grotto-ui #items li.folder > .folder-header,
+body.garhis-grotto-ui #compendium li.folder > .folder-header,
+body.garhis-grotto-ui #scenes li.folder > .folder-header,
+body.garhis-grotto-ui #journal li.folder > .folder-header,
+body.garhis-grotto-ui #tables li.folder > .folder-header,
+body.garhis-grotto-ui #cards li.folder > .folder-header { padding: 0 6px; }
+body.garhis-grotto-ui #actors .directory-item.actor,
+body.garhis-grotto-ui #items .directory-item.item,
+body.garhis-grotto-ui #journal .directory-item.journalentry,
+body.garhis-grotto-ui #tables .directory-item.rolltable {
   position: relative;
   line-height: 24px;
 }
-body.garhis-grotto-theme #scenes .directory-item.scene .document-name{
+body.garhis-grotto-ui #scenes .directory-item.scene .document-name{
   line-height: 24px;
 }
-body.garhis-grotto-theme #scenes .directory-item.scene {
+body.garhis-grotto-ui #scenes .directory-item.scene {
   line-height: 30px;
   height: 30px;
   margin-bottom: 3px;
 }
-body.garhis-grotto-theme #compendium .directory-item.compendium {
+body.garhis-grotto-ui #compendium .directory-item.compendium {
   position: relative;
   line-height: 24px;
   height: unset;
   flex-direction: row;
   align-items: center;
 }
-body.garhis-grotto-theme #actors .directory-item.actor .document-name,
-body.garhis-grotto-theme #items .directory-item.item .document-name,
-body.garhis-grotto-theme #tables .directory-item.rolltable .document-name {
+body.garhis-grotto-ui #actors .directory-item.actor .document-name,
+body.garhis-grotto-ui #items .directory-item.item .document-name,
+body.garhis-grotto-ui #tables .directory-item.rolltable .document-name {
   position: relative;
   padding-top: 2px;
   padding-left: 56px;
 }
-body.garhis-grotto-theme .compendium-sidebar .directory-item.compendium .compendium-name {
+body.garhis-grotto-ui .compendium-sidebar .directory-item.compendium .compendium-name {
   max-width: 70%;
   white-space: normal;
   margin-left: 1px;
@@ -148,9 +1267,9 @@ body.garhis-grotto-theme .compendium-sidebar .directory-item.compendium .compend
   text-align: left;
   display: flex;
 }
-body.garhis-grotto-theme #actors .directory-item.actor .thumbnail,
-body.garhis-grotto-theme #items .directory-item.item .thumbnail,
-body.garhis-grotto-theme #tables .directory-item.rolltable .thumbnail {
+body.garhis-grotto-ui #actors .directory-item.actor .thumbnail,
+body.garhis-grotto-ui #items .directory-item.item .thumbnail,
+body.garhis-grotto-ui #tables .directory-item.rolltable .thumbnail {
   clip: rect(12px, 48px, 36px, 0);
   position: absolute;
   margin-top: -11px;
